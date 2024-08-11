@@ -2,15 +2,15 @@ package model.entities;
 
 import java.io.Serializable;
 
-public class Cliente implements Serializable {
+public class Usuario implements Serializable {
     private String nome;
     private String cpf;
-    private int codigo;
+    private long codigo;
 
-    public Cliente(String nome, String cpf) {
+    public Usuario(String nome, String cpf) {
         this.nome = nome;
         this.cpf = cpf;
-        this.codigo = Integer.parseInt(cpf);
+        this.codigo = Long.parseLong(cpf);
     }
 
     public String getNome() {
@@ -21,7 +21,7 @@ public class Cliente implements Serializable {
         return cpf;
     }
 
-    public int getCodigo() {
+    public long getCodigo() {
         return codigo;
     }
 
@@ -29,7 +29,7 @@ public class Cliente implements Serializable {
         return "Nome: " + nome + "\nCPF: " + cpf;
     }
 
-    public boolean equals(Cliente cliente) {
+    public boolean equals(Usuario cliente) {
         return this.cpf.equals(cliente.getCpf());
     }
 }

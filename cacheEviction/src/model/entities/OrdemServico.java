@@ -8,17 +8,17 @@ public class OrdemServico implements Serializable{
     private int codigo;
     private String titulo;
     private String descricao;
-    private Cliente cliente;
+    private Usuario usuario;
     private Date hora;
 
     private static final long serialVersionUID = 2L;
 
-    public OrdemServico(String titulo, String descricao, Cliente cliente) {
+    public OrdemServico(String titulo, String descricao, Usuario usuario) {
         this.codigo = ++contador;
         this.titulo = titulo;
         this.descricao = descricao;
         this.hora = new Date();
-        this.cliente = cliente;
+        this.usuario = usuario;
     }
 
     public int getCodigo() {
@@ -37,8 +37,8 @@ public class OrdemServico implements Serializable{
         return hora;
     }
 
-    public Cliente getCliente() {
-        return cliente;
+    public Usuario getUsuario() {
+        return usuario;
     }
 
     public void setTitulo(String titulo) {
@@ -58,7 +58,8 @@ public class OrdemServico implements Serializable{
     }
 
     public String toString() {
-        return "Codigo: " + Integer.toString(codigo) + "\nTitulo: " + titulo + "\nCliente: " + cliente.getNome() + "\nDescricao: " + descricao + "\nHora: " + hora.toString();
+        String horaFormatada = String.format("%tF %tT", hora, hora);
+        return "Codigo: " + Integer.toString(codigo) + "\nTitulo: " + titulo + "\nCliente: " + usuario.getNome() + "\nDescricao: " + descricao + "\nHora: " + horaFormatada;
     }
 
     public boolean equals(OrdemServico ordemServico) {

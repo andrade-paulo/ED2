@@ -23,7 +23,7 @@ public class AVL<T> implements Serializable {
         order(tree.right);
     }
 
-    private Node<T> insert(Node<T> tree, int key, T data) {
+    private Node<T> insert(Node<T> tree, long key, T data) {
         if (tree == null) return new Node<T>(key, data);
         
         if (key < tree.key) {
@@ -44,11 +44,11 @@ public class AVL<T> implements Serializable {
         return tree;
     }
 
-    public T remove(int key) {
+    public T remove(long key) {
         return remove(raiz, key).data;
     }
 
-    public Node<T> remove(Node<T> tree, int key) {
+    public Node<T> remove(Node<T> tree, long key) {
         if (tree == null) return null;
 
         if (key < tree.key) {
@@ -158,11 +158,11 @@ public class AVL<T> implements Serializable {
         return left;
     }
 
-    public T search(int key) {
+    public T search(long key) {
         return search(raiz, key);
     }
 
-    private T search(Node<T> tree, int key) {
+    private T search(Node<T> tree, long key) {
         if (tree == null) return null;
 
         if (key < tree.key) {
@@ -194,7 +194,7 @@ public class AVL<T> implements Serializable {
         return (a > b) ? a : b;
     }
 
-    public void insert(int key, T data) {
+    public void insert(long key, T data) {
         raiz = insert(raiz, key, data);
     }
 

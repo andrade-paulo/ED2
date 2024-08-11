@@ -2,15 +2,15 @@ package view;
 
 import java.util.Scanner;
 
-import model.DAO.ClienteDAO;
+import model.DAO.UsuarioDAO;
 import model.DAO.OrdemServicoDAO;
-import model.entities.Cliente;
+import model.entities.Usuario;
 import model.entities.OrdemServico;
 
 public class ClienteScreen {
-    Cliente cliente;
+    Usuario usuario;
     OrdemServicoDAO ordemServicoDAO = new OrdemServicoDAO();
-    ClienteDAO clienteDAO = new ClienteDAO();
+    UsuarioDAO clienteDAO = new UsuarioDAO();
 
     public ClienteScreen() {
         // Login do cliente
@@ -22,14 +22,14 @@ public class ClienteScreen {
         String cpf = scanner.nextLine();
         
         try {
-            cliente = clienteDAO.getCliente(cpf);
+            usuario = clienteDAO.getCliente(cpf);
         } catch (Exception e) {
             System.out.println("Cliente não encontrado. Deseja se cadastrar? (s/n)");
             String resposta = scanner.nextLine();
     
             if (resposta.equals("s")) {
-                cliente = new Cliente(nome, cpf);
-                clienteDAO.addCliente(cliente);
+                usuario = new Usuario(nome, cpf);
+                clienteDAO.addCliente(usuario);
                 System.out.println("Cliente cadastrado com sucesso!");
                 showMenu();
             } else {
@@ -87,7 +87,7 @@ public class ClienteScreen {
         System.out.println("Descrição do Serviço: ");
         String descricao = scanner.nextLine();
 
-        OrdemServico ordemServico = new OrdemServico(titulo, descricao, cliente);
+        OrdemServico ordemServico = new OrdemServico(titulo, descricao, usuario);
         ordemServicoDAO.addOrdemServico(ordemServico);
 
         System.out.println("Ordem de Serviço cadastrada com sucesso!");

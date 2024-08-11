@@ -1,22 +1,4 @@
-2024-08-10 18:17:20: Ordem de Serviço 0 adicionada
-2024-08-10 18:17:39: Ordem de Serviço 0 adicionada
-2024-08-10 18:19:45: Ordem de Serviço 0 adicionada
-2024-08-10 18:19:55: Ordem de Serviço 0 adicionada
-2024-08-10 18:20:26: Ordem de Serviço 0 adicionada
-2024-08-10 18:20:50: Ordem de Serviço 1 adicionada
-2024-08-10 18:22:00: Ordem de Serviço 2 adicionada
-2024-08-10 18:22:27: Ordem de Serviço 3 adicionada
-2024-08-10 18:22:52: [CACHE MISS] Ordem de Serviço 0 não encontrada em cache
-2024-08-10 18:22:52: [AVL HIT] Ordem de Serviço 0 encontrada
-2024-08-10 18:23:24: [CACHE MISS] Ordem de Serviço 0 não encontrada em cache
-2024-08-10 18:23:24: [AVL HIT] Ordem de Serviço 0 encontrada
-2024-08-10 18:23:24: [CACHE MISS] Ordem de Serviço 0 não encontrada em cache
-2024-08-10 18:23:24: [AVL HIT] Ordem de Serviço 0 encontrada
-2024-08-10 18:24:21: [CACHE MISS] Ordem de Serviço 0 não encontrada em cache
-2024-08-10 18:24:21: [AVL HIT] Ordem de Serviço 0 encontrada
-2024-08-10 18:24:21: [CACHE MISS] Ordem de Serviço 0 não encontrada em cache
-2024-08-10 18:24:21: [AVL HIT] Ordem de Serviço 0 encontrada
-2024-08-10 18:26:11: [CACHE MISS] Ordem de Serviço 0 não encontrada em cache
-2024-08-10 18:26:11: [CACHE INSERT] Ordem de Serviço 0 inserida em cache
-2024-08-10 18:26:11: [AVL HIT] Ordem de Serviço 0 encontrada
-2024-08-10 18:26:11: [CACHE HIT] Ordem de Serviço 0 encontrada em cache
+2024-08-10 22:49:22: [CACHE + AVL INSERT] Ordem de Serviço 1 adicionada
+2024-08-10 22:49:53: [CACHE + AVL INSERT] Ordem de Serviço 2 adicionada
+2024-08-10 22:50:05: [CACHE + AVL INSERT] Ordem de Serviço 3 adicionada
+2024-08-10 22:52:43: [CACHE + AVL INSERT] Ordem de Serviço 4 adicionada

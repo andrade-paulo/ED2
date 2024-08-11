@@ -1,23 +1,23 @@
 package model.entities;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+import java.io.Serializable;
+import java.util.Date;
 
-public class OrdemServico {
+public class OrdemServico implements Serializable{
     private static int contador = 0;
     private int codigo;
     private String titulo;
     private String descricao;
     private Cliente cliente;
+    private Date hora;
 
-    DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
-    LocalDateTime hora;
+    private static final long serialVersionUID = 2L;
 
     public OrdemServico(String titulo, String descricao, Cliente cliente) {
-        this.codigo = contador++;
+        this.codigo = ++contador;
         this.titulo = titulo;
         this.descricao = descricao;
-        this.hora = LocalDateTime.now();
+        this.hora = new Date();
         this.cliente = cliente;
     }
 
@@ -33,7 +33,7 @@ public class OrdemServico {
         return descricao;
     }
 
-    public LocalDateTime getHora() {
+    public Date getHora() {
         return hora;
     }
 
@@ -49,12 +49,16 @@ public class OrdemServico {
         this.descricao = descricao;
     }
 
+    public static void setContador(int contador) {
+        OrdemServico.contador = contador;
+    }
+
     public int getContador() {
         return contador;
     }
 
     public String toString() {
-        return "Titulo: " + titulo + "\nCliente: " + cliente.getNome() + "\nDescricao: " + descricao + "\nHora: " + hora.format(dateTimeFormatter);
+        return "Codigo: " + Integer.toString(codigo) + "\nTitulo: " + titulo + "\nCliente: " + cliente.getNome() + "\nDescricao: " + descricao + "\nHora: " + hora.toString();
     }
 
     public boolean equals(OrdemServico ordemServico) {

@@ -1,15 +1,16 @@
 package model.entities;
 
-public class Cliente {
+import java.io.Serializable;
+
+public class Cliente implements Serializable {
     private String nome;
     private String cpf;
     private int codigo;
-    private static int contador = 0;
 
     public Cliente(String nome, String cpf) {
         this.nome = nome;
         this.cpf = cpf;
-        this.codigo = contador++;
+        this.codigo = Integer.parseInt(cpf);
     }
 
     public String getNome() {
@@ -22,10 +23,6 @@ public class Cliente {
 
     public int getCodigo() {
         return codigo;
-    }
-
-    public int getContador() {
-        return contador;
     }
 
     public String toString() {

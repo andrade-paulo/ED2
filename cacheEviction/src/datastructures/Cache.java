@@ -18,17 +18,17 @@ public class Cache {
         itens[posicaoInicial++] = ordemServico;
     }
 
-    public OrdemServico buscar(int codigo) throws Exception {
+    public OrdemServico buscar(int codigo){
         for (OrdemServico ordemServico : itens) {
             if (ordemServico != null && ordemServico.getCodigo() == codigo) {
                 return ordemServico;
             }
         }
         
-        throw new Exception("Ordem de serviço não encontrada");
+        return null;
     }
 
-    public OrdemServico remover(OrdemServico ordemServico) throws Exception {
+    public OrdemServico remover(OrdemServico ordemServico) {
         for (int i = 0; i < tamanhoMaximo; i++) {
             if (itens[i] != null && itens[i].equals(ordemServico)) {
                 OrdemServico removido = itens[i];
@@ -36,7 +36,8 @@ public class Cache {
                 return removido;
             }
         }
-        throw new Exception("Ordem de serviço não encontrada");
+        
+        return null;
     }
 
     public void limpar() {

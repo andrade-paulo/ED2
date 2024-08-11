@@ -1,9 +1,17 @@
 package datastructures;
 
-public class AVL<T> {
+import java.io.Serializable;
+
+public class AVL<T> implements Serializable {
     Node<T> raiz = null;
+    int size = 0;
+    static private final long serialVersionUID = 1L;
 
     public AVL() {}
+
+    public void order() {
+        order(raiz);
+    }
 
     public void order(Node<T> tree) {
         if (tree == null) {
@@ -11,7 +19,7 @@ public class AVL<T> {
         }
 
         order(tree.left);
-        System.out.print(tree.data + " ");
+        System.out.println(tree.data + "\n---------------------------------");
         order(tree.right);
     }
 
@@ -23,13 +31,16 @@ public class AVL<T> {
         }
         else if (key > tree.key) {
             tree.right = insert(tree.right, key, data);
+        } else {
+            // Isso aqui provavelmente está errado
+            tree.data = data;
         }
         
         // Update the height of the node
         tree.high = 1 + biggest(high(tree.left), high(tree.right));
 
         tree = balanceNode(tree);
-        
+
         return tree;
     }
 
@@ -162,6 +173,18 @@ public class AVL<T> {
             return tree.data;
         }
     }
+    
+    public T getLast() {
+        return getLast(raiz);
+    }
+
+    private T getLast(Node<T> tree) {
+        if (tree.right == null) {
+            return tree.data;
+        }
+
+        return getLast(tree.right);
+    }
 
     private int getBalanceFactor(Node<T> right) {
         return (right == null) ? 0 : high(right.left) - high(right.right);
@@ -178,5 +201,18 @@ public class AVL<T> {
     public int high(Node<T> tree) {
         if (tree == null) return -1;
         return tree.high;
+    }
+
+    public boolean isEmpty() {
+        return raiz == null;
+    }
+
+    public int countNodes() {
+        return countNodes(raiz);
+    }
+
+    private int countNodes(Node<T> tree) {
+        if (tree == null) return 0;
+        return 1 + countNodes(tree.left) + countNodes(tree.right);
     }
 }

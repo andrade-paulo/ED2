@@ -11,12 +11,23 @@ public class ClienteDAO {
     }
 
     public void addCliente(Cliente cliente) {
-        clientes.insert(cliente.getCodigo(), cliente);
+        try {
+            getCliente(cliente.getCpf());
+            throw new Exception("Cliente já cadastrado");
+        } catch (Exception e) {
+            clientes.insert(cliente.getCodigo(), cliente);
+        }
     }
 
     public Cliente getCliente(int codigo) throws Exception {
         Cliente cliente = clientes.search(codigo);
         return cliente;
+    }
+
+    public Cliente getCliente(String cpf) throws Exception {
+        Cliente cliente = clientes.search(Integer.parseInt(cpf));
+
+        throw new Exception("Cliente não encontrado");
     }
 
     public Cliente removerCliente(int codigo) throws Exception {

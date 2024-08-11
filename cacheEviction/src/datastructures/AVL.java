@@ -1,10 +1,15 @@
 package datastructures;
 
 import java.io.Serializable;
+import java.util.Iterator;
+import java.util.Stack;
 
-public class AVL<T> implements Serializable {
+import model.DAO.LogDAO;
+
+public class AVL<T> implements Serializable, Iterable<T> {
     Node<T> raiz = null;
     int size = 0;
+
     static private final long serialVersionUID = 1L;
 
     public AVL() {}
@@ -142,6 +147,8 @@ public class AVL<T> implements Serializable {
         tree.high = 1 + biggest(high(tree.left), high(tree.right));
         right.high = 1 + biggest(high(right.left), high(right.right));
 
+        LogDAO.addLog("[AVL ROTATE] Rotação à esquerda na AVL");
+
         return right;
     }
 
@@ -154,6 +161,8 @@ public class AVL<T> implements Serializable {
 
         tree.high = 1 + biggest(high(tree.left), high(tree.right));
         left.high = 1 + biggest(high(left.left), high(left.right));
+
+        LogDAO.addLog("[AVL ROTATE] Rotação à direita na AVL");
 
         return left;
     }
@@ -198,6 +207,10 @@ public class AVL<T> implements Serializable {
         raiz = insert(raiz, key, data);
     }
 
+    public int high() {
+        return high(raiz);
+    }
+
     public int high(Node<T> tree) {
         if (tree == null) return -1;
         return tree.high;
@@ -214,5 +227,39 @@ public class AVL<T> implements Serializable {
     private int countNodes(Node<T> tree) {
         if (tree == null) return 0;
         return 1 + countNodes(tree.left) + countNodes(tree.right);
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+        return new AVLIterator<T>(raiz);
+    }
+
+    @SuppressWarnings("hiding")
+    private class AVLIterator<T> implements Iterator<T> {
+        private Node<T> current;
+        private Stack<Node<T>> stack = new Stack<>();
+
+        public AVLIterator(Node<T> raiz) {
+            current = raiz;
+        }
+
+        @Override
+        public boolean hasNext() {
+            return !stack.isEmpty() || current != null;
+        }
+
+        @Override
+        public T next() {
+            while (current != null) {
+                stack.push(current);
+                current = current.left;
+            }
+
+            current = stack.pop();
+            Node<T> node = current;
+            current = current.right;
+
+            return node.data;
+        }
     }
 }

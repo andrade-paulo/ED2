@@ -11,10 +11,10 @@ public class LogDAO {
 
         // Carregar o arquivo "log.txt" ou criar um novo
         try {
-            File file = new File("log.txt");
+            File file = new File("cacheEviction/src/database/log.txt");
 
             if (!file.createNewFile()) {
-                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream("log.txt"), "UTF-8"));
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream("cacheEviction/src/database/log.txt"), "UTF-8"));
                 String line;
 
                 while ((line = bufferedReader.readLine()) != null) {
@@ -28,7 +28,7 @@ public class LogDAO {
         }
     }
 
-    public void addLog(String log) {
+    public static void addLog(String log) {
         Date date = new Date();
 
         // Format the date
@@ -38,7 +38,7 @@ public class LogDAO {
 
         // Salvar no arquivo "log.txt" com utf-8
         try {
-            BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("log.txt"), "UTF-8"));
+            BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("cacheEviction/src/database/log.txt"), "UTF-8"));
             bufferedWriter.write(LogDAO.log);
             bufferedWriter.close();
         } catch (IOException e) {

@@ -1,0 +1,53 @@
+2024-08-11 10:34:49: [AVL INSERT] Ordem de Serviço 1 adicionada na AVL. Altura: 1
+2024-08-11 10:34:49: [CACHE INSERT] Ordem de Serviço 1 adicionada na cache
+2024-08-11 10:37:54: [AVL INSERT] Ordem de Serviço 1 adicionada na AVL. Altura: 1
+2024-08-11 10:37:54: [CACHE INSERT] Ordem de Serviço 1 adicionada na cache
+2024-08-11 10:38:11: [AVL ROTATE] Rotação à esquerda na AVL
+2024-08-11 10:38:11: [AVL INSERT] Ordem de Serviço 2 adicionada na AVL. Altura: 1
+2024-08-11 10:38:11: [CACHE INSERT] Ordem de Serviço 2 adicionada na cache
+2024-08-11 10:43:49: [AVL ROTATE] Rotação à direita na AVL
+2024-08-11 10:52:07: [CACHE MISS] Ordem de Serviço 0 não encontrada em cache
+2024-08-11 10:52:07: [AVL MISS] Ordem de Serviço 0 não encontrada na AVL
+2024-08-11 10:52:09: [CACHE MISS] Ordem de Serviço 1 não encontrada em cache
+2024-08-11 10:52:09: [CACHE INSERT] Ordem de Serviço 1 inserida em cache
+2024-08-11 10:52:09: [AVL HIT] Ordem de Serviço 1 encontrada
+2024-08-11 10:53:14: [CACHE MISS] Ordem de Serviço 1 não encontrada em cache
+2024-08-11 10:53:14: [CACHE INSERT] Ordem de Serviço 1 inserida em cache
+2024-08-11 10:53:14: [AVL HIT] Ordem de Serviço 1 encontrada
+2024-08-11 10:53:26: [CACHE HIT] Ordem de Serviço 1 encontrada em cache
+2024-08-11 10:53:46: [AVL REMOVE] Ordem de Serviço 1 removida da AVL. Altura: 0
+2024-08-11 10:53:46: [CACHE REMOVE] Ordem de Serviço 1 removida da cache
+2024-08-11 10:53:48: [AVL REMOVE] Ordem de Serviço 0 removida da AVL. Altura: 0
+2024-08-11 10:53:48: [CACHE REMOVE] Ordem de Serviço 0 removida da cache
+2024-08-11 10:53:53: [AVL REMOVE] Ordem de Serviço 21 removida da AVL. Altura: 0
+2024-08-11 10:53:53: [CACHE REMOVE] Ordem de Serviço 21 removida da cache
+2024-08-11 10:55:29: [CACHE MISS] Ordem de Serviço 0 não encontrada em cache
+2024-08-11 10:55:29: [AVL MISS] Ordem de Serviço 0 não encontrada na AVL
+2024-08-11 10:55:32: [CACHE MISS] Ordem de Serviço 120 não encontrada em cache
+2024-08-11 10:55:32: [AVL MISS] Ordem de Serviço 120 não encontrada na AVL
+2024-08-11 10:55:36: [CACHE MISS] Ordem de Serviço 2 não encontrada em cache
+2024-08-11 10:55:36: [CACHE INSERT] Ordem de Serviço 2 inserida em cache
+2024-08-11 10:55:36: [AVL HIT] Ordem de Serviço 2 encontrada
+2024-08-11 10:55:43: Ordem de Serviço 2 atualizada
+2024-08-11 11:00:28: [AVL ROTATE] Rotação à esquerda na AVL
+2024-08-11 11:00:28: [AVL INSERT] Ordem de Serviço 3 adicionada na AVL. Altura: 1
+2024-08-11 11:00:28: [CACHE INSERT] Ordem de Serviço 3 adicionada na cache
+2024-08-11 11:00:46: [AVL INSERT] Ordem de Serviço 4 adicionada na AVL. Altura: 2
+2024-08-11 11:00:46: [CACHE INSERT] Ordem de Serviço 4 adicionada na cache
+2024-08-11 11:02:04: [AVL REMOVE] Ordem de Serviço 4 removida da AVL. Altura: 1
+2024-08-11 11:02:04: [CACHE REMOVE] Ordem de Serviço 4 removida da cache
+2024-08-11 11:02:09: [CACHE MISS] Ordem de Serviço 2 não encontrada em cache
+2024-08-11 11:02:09: [CACHE INSERT] Ordem de Serviço 2 inserida em cache
+2024-08-11 11:02:09: [AVL HIT] Ordem de Serviço 2 encontrada
+2024-08-11 11:02:14: [AVL REMOVE] Ordem de Serviço 2 removida da AVL. Altura: 0
+2024-08-11 11:02:14: [CACHE REMOVE] Ordem de Serviço 2 removida da cache
+2024-08-11 11:03:38: [AVL ROTATE] Rotação à esquerda na AVL
+2024-08-11 11:03:38: [AVL INSERT] Ordem de Serviço 4 adicionada na AVL. Altura: 1
+2024-08-11 11:03:38: [CACHE INSERT] Ordem de Serviço 4 adicionada na cache
+2024-08-11 11:04:07: [AVL INSERT] Ordem de Serviço 5 adicionada na AVL. Altura: 2
+2024-08-11 11:04:07: [CACHE INSERT] Ordem de Serviço 5 adicionada na cache
+2024-08-11 11:04:15: [CACHE HIT] Ordem de Serviço 5 encontrada em cache
+2024-08-11 11:04:19: [CACHE HIT] Ordem de Serviço 5 encontrada em cache
+2024-08-11 11:04:22: Ordem de Serviço 5 atualizada
+2024-08-11 11:04:33: [AVL REMOVE] Ordem de Serviço 5 removida da AVL. Altura: 1
+2024-08-11 11:04:33: [CACHE REMOVE] Ordem de Serviço 5 removida da cache

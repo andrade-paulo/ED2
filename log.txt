@@ -1,4 +1,0 @@
-2024-08-10 22:49:22: [CACHE + AVL INSERT] Ordem de Serviço 1 adicionada
-2024-08-10 22:49:53: [CACHE + AVL INSERT] Ordem de Serviço 2 adicionada
-2024-08-10 22:50:05: [CACHE + AVL INSERT] Ordem de Serviço 3 adicionada
-2024-08-10 22:52:43: [CACHE + AVL INSERT] Ordem de Serviço 4 adicionada

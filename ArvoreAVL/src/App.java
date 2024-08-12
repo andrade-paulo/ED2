@@ -13,7 +13,7 @@ public class App {
 
         System.out.println();
 
-        tree.remove(21);
+        tree.remove(30);
         tree.order(tree.raiz);
     }
 }

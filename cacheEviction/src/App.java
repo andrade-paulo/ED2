@@ -3,7 +3,7 @@ import model.DAO.LogDAO;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        LogDAO logDAO = new LogDAO();
+        LogDAO.loadLog();
         if (Controller.realizarLogin()) {
             Controller.showMenu();
         } else {

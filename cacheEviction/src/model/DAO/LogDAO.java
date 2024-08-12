@@ -7,6 +7,10 @@ public class LogDAO {
     static private String log;
 
     public LogDAO() {
+        loadLog();
+    }
+
+    public static void loadLog() {
         log = "";
 
         // Carregar o arquivo "log.txt" ou criar um novo

@@ -12,7 +12,7 @@ public class Cache {
     }
 
     public void inserir(OrdemServico ordemServico) {
-        if (posicaoInicial == tamanhoMaximo - 1) {
+        if (posicaoInicial == tamanhoMaximo) {
             posicaoInicial = 0;  // Rotação da cache para FIFO
         }
         itens[posicaoInicial++] = ordemServico;
@@ -40,10 +40,40 @@ public class Cache {
         return null;
     }
 
+    public OrdemServico remover(int codigo) {
+        for (int i = 0; i < tamanhoMaximo; i++) {
+            if (itens[i] != null && itens[i].getCodigo() == codigo) {
+                OrdemServico removido = itens[i];
+                itens[i] = null;
+                return removido;
+            }
+        }
+        
+        return null;
+    }
+
     public void limpar() {
         // Util para debug
         for (int i = 0; i < tamanhoMaximo; i++) {
             itens[i] = null;
         }
+    }
+
+    public String toString() {
+        // Separeted by commas
+        StringBuilder sb = new StringBuilder();
+        sb.append("(");
+
+        if (itens[0] != null) sb.append(itens[0].getCodigo());
+
+        for (int i = 1; i < tamanhoMaximo; i++) {
+            sb.append(", ");
+            if (itens[i] != null) {
+                sb.append(itens[i].getCodigo());
+            }
+        }
+
+        sb.append(")");
+        return sb.toString();
     }
 }

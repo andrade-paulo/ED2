@@ -43,15 +43,14 @@ public class UsuarioDAO {
         return usuario;
     }
 
-    public Usuario removerCliente(int codigo) throws Exception {
-        Usuario usuario = usuarios.remove(codigo);
-
-        if (usuario == null) {
+    public void removerCliente(int codigo) throws Exception {
+        try {
+            usuarios.remove(codigo);
+        } catch (Exception e) {
             throw new Exception("Cliente não encontrado");
         }
 
         updateArquivo();
-        return usuario;
     }
 
     public void updateCliente(Usuario usuario) {

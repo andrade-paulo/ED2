@@ -23,9 +23,13 @@ public class AVL<T> implements Serializable, Iterable<T> {
             return;
         }
 
-        order(tree.left);
         System.out.println(tree.data + "\n---------------------------------");
+        order(tree.left);
         order(tree.right);
+    }
+
+    public void insert(long key, T data) {
+        raiz = insert(raiz, key, data);
     }
 
     private Node<T> insert(Node<T> tree, long key, T data) {
@@ -37,8 +41,8 @@ public class AVL<T> implements Serializable, Iterable<T> {
         else if (key > tree.key) {
             tree.right = insert(tree.right, key, data);
         } else {
-            // Isso aqui provavelmente está errado
             tree.data = data;
+            return tree;
         }
         
         // Update the height of the node
@@ -49,12 +53,14 @@ public class AVL<T> implements Serializable, Iterable<T> {
         return tree;
     }
 
-    public T remove(long key) {
-        return remove(raiz, key).data;
+    public void remove(long key) throws Exception {
+        remove(raiz, key);
     }
-
-    public Node<T> remove(Node<T> tree, long key) {
-        if (tree == null) return null;
+    
+    public Node<T> remove(Node<T> tree, long key) throws Exception {
+        if (tree == null) {
+            throw new Exception("Node not found");
+        }
 
         if (key < tree.key) {
             tree.left = remove(tree.left, key);
@@ -62,9 +68,15 @@ public class AVL<T> implements Serializable, Iterable<T> {
             tree.right = remove(tree.right, key);
         } else {
             if (tree.left == null && tree.right == null) {  // If it is a leaf
+                if (tree == raiz) raiz = null;
                 tree = null;
             } else if (tree.left == null || tree.right == null) {  // If it has only one child
-                tree = (tree.left == null) ? tree.right : tree.left;
+                if (tree == raiz) {
+                    tree = (tree.left == null) ? tree.right : tree.left;
+                    raiz = tree;
+                } else {
+                    tree = (tree.left == null) ? tree.right : tree.left;
+                }
             } else {  // If it has two children
                 // Find the smallest node in the right subtree
                 Node<T> temp;
@@ -98,12 +110,11 @@ public class AVL<T> implements Serializable, Iterable<T> {
             }
         }
 
-        if (tree == null) return null;  // Node was not found
+        if (tree == null) return tree;
 
         // Update the height of the node
         tree.high = 1 + biggest(high(tree.left), high(tree.right));
 
-        // Balance the tree
         tree = balanceNode(tree);
 
         return tree;
@@ -147,6 +158,8 @@ public class AVL<T> implements Serializable, Iterable<T> {
         tree.high = 1 + biggest(high(tree.left), high(tree.right));
         right.high = 1 + biggest(high(right.left), high(right.right));
 
+        if (tree == raiz) raiz = right;
+
         LogDAO.addLog("[AVL ROTATE] Rotação à esquerda na AVL");
 
         return right;
@@ -163,6 +176,8 @@ public class AVL<T> implements Serializable, Iterable<T> {
         left.high = 1 + biggest(high(left.left), high(left.right));
 
         LogDAO.addLog("[AVL ROTATE] Rotação à direita na AVL");
+
+        if (tree == raiz) raiz = left;
 
         return left;
     }
@@ -195,24 +210,20 @@ public class AVL<T> implements Serializable, Iterable<T> {
         return getLast(tree.right);
     }
 
-    private int getBalanceFactor(Node<T> right) {
-        return (right == null) ? 0 : high(right.left) - high(right.right);
+    private int getBalanceFactor(Node<T> node) {
+        return (node == null) ? 0 : high(node.left) - high(node.right);
     }
 
     private int biggest(int a, int b) {
         return (a > b) ? a : b;
     }
 
-    public void insert(long key, T data) {
-        raiz = insert(raiz, key, data);
-    }
-
     public int high() {
         return high(raiz);
     }
 
-    public int high(Node<T> tree) {
-        if (tree == null) return -1;
+    private int high(Node<T> tree) {
+        if (tree == null) return 0;
         return tree.high;
     }
 
@@ -224,6 +235,10 @@ public class AVL<T> implements Serializable, Iterable<T> {
         return countNodes(raiz);
     }
 
+    public T getRaiz() {
+        return raiz.data;
+    }
+
     private int countNodes(Node<T> tree) {
         if (tree == null) return 0;
         return 1 + countNodes(tree.left) + countNodes(tree.right);
@@ -232,6 +247,21 @@ public class AVL<T> implements Serializable, Iterable<T> {
     @Override
     public Iterator<T> iterator() {
         return new AVLIterator<T>(raiz);
+    }
+
+    @SuppressWarnings("hiding")
+    private class Node<T> implements Serializable {
+        long key;
+        T data;
+        int high;
+        Node<T> left, right;
+        private static final long serialVersionUID = 3L;
+    
+        public Node(long key, T data) {
+            this.key = key;
+            this.data = data;
+            this.high = 1;
+        }
     }
 
     @SuppressWarnings("hiding")

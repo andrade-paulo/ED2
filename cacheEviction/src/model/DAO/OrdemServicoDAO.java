@@ -31,7 +31,7 @@ public class OrdemServicoDAO {
         LogDAO.addLog("[AVL INSERT] Ordem de Serviço " + ordemServico.getCodigo() + " adicionada na AVL. Altura: " + ordensServico.high());
 
         cache.inserir(ordemServico);
-        LogDAO.addLog("[CACHE INSERT] Ordem de Serviço " + ordemServico.getCodigo() + " adicionada na cache");
+        LogDAO.addLog("[CACHE INSERT] " + cache.toString());
 
         tamanho++;
         updateArquivo();
@@ -53,7 +53,7 @@ public class OrdemServicoDAO {
 
             // Insere na cache
             cache.inserir(ordemServico);
-            LogDAO.addLog("[CACHE INSERT] Ordem de Serviço " + ordemServico.getCodigo() + " inserida em cache");
+            LogDAO.addLog("[CACHE INSERT] " + cache.toString());
         } else {
             LogDAO.addLog("[CACHE HIT] Ordem de Serviço " + codigo + " encontrada em cache");
             return ordemServico;
@@ -63,22 +63,20 @@ public class OrdemServicoDAO {
         return ordemServico;
     }
 
-    public OrdemServico removerOrdemServico(int codigo) throws Exception {
-        OrdemServico ordemServico = ordensServico.remove(codigo);
-        LogDAO.addLog("[AVL REMOVE] Ordem de Serviço " + codigo + " removida da AVL. Altura: " + ordensServico.high());
-
-        if (ordemServico == null) {
+    public void removerOrdemServico(int codigo) throws Exception {
+        try {
+            ordensServico.remove(codigo);
+            LogDAO.addLog("[AVL REMOVE] Ordem de Serviço " + codigo + " removida da AVL. Altura: " + ordensServico.high());
+        } catch (Exception e) {
             LogDAO.addLog("[AVL MISS] Ordem de Serviço " + codigo + " não encontrada na AVL");
             throw new Exception("Ordem de Serviço não encontrada");
         }
         
-        cache.remover(ordemServico);
-        LogDAO.addLog("[CACHE REMOVE] Ordem de Serviço " + codigo + " removida da cache");
+        cache.remover(codigo);
+        LogDAO.addLog("[CACHE REMOVE] " + cache.toString());
         
         tamanho--;
         updateArquivo();
-        
-        return ordemServico;
     }
 
     public void updateOrdemServico(OrdemServico ordemServico) {

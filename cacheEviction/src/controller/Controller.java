@@ -148,6 +148,7 @@ public class Controller {
             ordemServicoDAO.removerOrdemServico(codigo);
             System.out.println(Color.GREEN + "Ordem de Serviço " + codigo + " removida com sucesso!" + Color.RESET);
         } catch (Exception e) {
+            System.out.println(e);
             System.out.println(Color.RED + "Oops! Ordem de Serviço não encontrada." + Color.RESET);
         }
     }
@@ -191,7 +192,7 @@ public class Controller {
         ordemServicoDAO.listarOS(usuario);
     }
 
-    public static void listarTodosOS() {
+    private static void listarTodosOS() {
         limparTela();
 
         if (ordemServicoDAO.getTamanho() == 1) {

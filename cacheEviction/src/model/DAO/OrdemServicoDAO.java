@@ -94,7 +94,7 @@ public class OrdemServicoDAO {
     public void updateArquivo() {
         // Abrir arquivo binário "database.dat" e atualizar com as OSs da AVL
         try {
-            FileOutputStream fileOut = new FileOutputStream("cacheEviction/src/database/database.dat");
+            FileOutputStream fileOut = new FileOutputStream("database/database.dat");
             ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);
             objectOut.writeObject(ordensServico);
             objectOut.close();
@@ -108,11 +108,11 @@ public class OrdemServicoDAO {
     public void carregarArquivo() {
         // Carregar arquivo binário "database.dat" e preencher AVL com as OSs
         try {
-            File file = new File("cacheEviction/src/database/database.dat");
+            File file = new File("database/database.dat");
             if (!file.exists()) {
                 file.createNewFile();
             } else {
-                FileInputStream fileIn = new FileInputStream("cacheEviction/src/database/database.dat");
+                FileInputStream fileIn = new FileInputStream("database/database.dat");
                 ObjectInputStream objectIn = new ObjectInputStream(fileIn);
                 ordensServico = (AVL<OrdemServico>) objectIn.readObject();
                 objectIn.close();

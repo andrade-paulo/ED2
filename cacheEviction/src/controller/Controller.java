@@ -16,19 +16,24 @@ public class Controller {
     public Controller() {}
 
     public static boolean realizarLogin() {
-        limparTela();
-
         System.out.println(Color.CYAN + "Bem-vindo ao sistema de Ordem de Serviço!" + Color.RESET);
 
         System.out.print("Digite seu nome: ");
         String nome = scanner.nextLine();
         System.out.print("Digite seu CPF (apenas números): ");
         String cpf = scanner.nextLine();
+        
+        if (nome.isEmpty() || cpf.isEmpty()) {
+            limparTela();
+            System.out.println(Color.RED + "Oops! Os dois campos devem ser preenchidos." + Color.RESET);
+            return realizarLogin();
+        }
 
         try {
             usuario = usuarioDAO.getCliente(cpf);
             
             if (!usuario.getNome().equals(nome)) {
+                limparTela();
                 System.out.println(Color.RED + "Oops! As credenciais informadas não conferem." + Color.RESET);
                 return realizarLogin();
             }
@@ -46,6 +51,7 @@ public class Controller {
             } else {
                 System.out.println("Saindo do programa...");
                 scanner.close();
+                System.exit(0);
                 return false;
             }
         }
@@ -148,7 +154,6 @@ public class Controller {
             ordemServicoDAO.removerOrdemServico(codigo);
             System.out.println(Color.GREEN + "Ordem de Serviço " + codigo + " removida com sucesso!" + Color.RESET);
         } catch (Exception e) {
-            System.out.println(e);
             System.out.println(Color.RED + "Oops! Ordem de Serviço não encontrada." + Color.RESET);
         }
     }
@@ -204,7 +209,7 @@ public class Controller {
         ordemServicoDAO.listarTodosOS();
     }
 
-    private static void limparTela() {
+    public static void limparTela() {
         System.out.print("\033[H\033[2J");
         System.out.flush(); 
     }

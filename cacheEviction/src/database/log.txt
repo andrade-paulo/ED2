@@ -1,181 +1,187 @@
-2024-08-11 17:15:56: [AVL INSERT] Ordem de Serviço 1 adicionada na AVL. Altura: 1
-2024-08-11 17:15:56: [CACHE INSERT] (1)
-2024-08-11 17:15:59: [AVL INSERT] Ordem de Serviço 2 adicionada na AVL. Altura: 2
-2024-08-11 17:15:59: [CACHE INSERT] (1, 2)
-2024-08-11 17:16:04: [AVL REMOVE] Ordem de Serviço 1 removida da AVL. Altura: 1
-2024-08-11 17:16:04: [CACHE REMOVE] (2)
-2024-08-11 17:16:19: [AVL INSERT] Ordem de Serviço 3 adicionada na AVL. Altura: 2
-2024-08-11 17:16:19: [CACHE INSERT] (2, 3)
-2024-08-11 17:16:33: [AVL ROTATE] Rotação à esquerda na AVL
-2024-08-11 17:16:33: [AVL INSERT] Ordem de Serviço 4 adicionada na AVL. Altura: 2
-2024-08-11 17:16:33: [CACHE INSERT] (2, 3, 4)
-2024-08-11 17:16:55: [AVL INSERT] Ordem de Serviço 5 adicionada na AVL. Altura: 3
-2024-08-11 17:16:55: [CACHE INSERT] (2, 3, 4, 5)
-2024-08-11 17:17:54: [AVL REMOVE] Ordem de Serviço 4 removida da AVL. Altura: 2
-2024-08-11 17:17:54: [CACHE REMOVE] (2, 35)
-2024-08-11 17:18:14: [AVL REMOVE] Ordem de Serviço 3 removida da AVL. Altura: 2
-2024-08-11 17:18:14: [CACHE REMOVE] (25)
-2024-08-11 17:18:34: [AVL ROTATE] Rotação à esquerda na AVL
-2024-08-11 17:18:34: [AVL INSERT] Ordem de Serviço 6 adicionada na AVL. Altura: 2
-2024-08-11 17:18:34: [CACHE INSERT] (25, 6)
-2024-08-11 17:18:37: [AVL INSERT] Ordem de Serviço 7 adicionada na AVL. Altura: 3
-2024-08-11 17:18:37: [CACHE INSERT] (25, 6, 7)
-2024-08-11 17:20:15: [AVL REMOVE] Ordem de Serviço 5 removida da AVL. Altura: 2
-2024-08-11 17:20:15: [CACHE REMOVE] (26, 7)
-2024-08-11 17:20:33: [CACHE HIT] Ordem de Serviço 2 encontrada em cache
-2024-08-11 17:24:01: [AVL INSERT] Ordem de Serviço 8 adicionada na AVL. Altura: 3
-2024-08-11 17:24:01: [CACHE INSERT] 8, 
-2024-08-11 17:26:12: [AVL ROTATE] Rotação à esquerda na AVL
-2024-08-11 17:26:12: [AVL INSERT] Ordem de Serviço 9 adicionada na AVL. Altura: 3
-2024-08-11 17:26:12: [CACHE INSERT] (9)
-2024-08-11 17:26:20: [AVL ROTATE] Rotação à esquerda na AVL
-2024-08-11 17:26:20: [AVL INSERT] Ordem de Serviço 10 adicionada na AVL. Altura: 3
-2024-08-11 17:26:20: [CACHE INSERT] (9, 10)
-2024-08-11 17:26:28: [AVL REMOVE] Ordem de Serviço 9 removida da AVL. Altura: 3
-2024-08-11 17:26:28: [CACHE REMOVE] (, 10)
-2024-08-11 17:27:55: [AVL INSERT] Ordem de Serviço 11 adicionada na AVL. Altura: 3
-2024-08-11 17:27:55: [CACHE INSERT] (11, , , , , , , , , , , , , , , , , , , )
-2024-08-11 17:28:39: [AVL ROTATE] Rotação à esquerda na AVL
-2024-08-11 17:28:39: [AVL INSERT] Ordem de Serviço 12 adicionada na AVL. Altura: 3
-2024-08-11 17:28:39: [CACHE INSERT] (11, 12, , , , , , , , , , , , , , , , , , )
-2024-08-11 17:28:48: [CACHE MISS] Ordem de Serviço 7 não encontrada em cache
-2024-08-11 17:28:48: [CACHE INSERT] (11, 12, 7, , , , , , , , , , , , , , , , , )
-2024-08-11 17:28:48: [AVL HIT] Ordem de Serviço 7 encontrada
-2024-08-11 17:29:07: [AVL INSERT] Ordem de Serviço 13 adicionada na AVL. Altura: 4
-2024-08-11 17:29:07: [CACHE INSERT] (11, 12, 7, 13, , , , , , , , , , , , , , , , )
-2024-08-11 17:29:12: [AVL ROTATE] Rotação à esquerda na AVL
-2024-08-11 17:29:12: [AVL INSERT] Ordem de Serviço 14 adicionada na AVL. Altura: 4
-2024-08-11 17:29:12: [CACHE INSERT] (11, 12, 7, 13, 14, , , , , , , , , , , , , , , )
-2024-08-11 17:29:16: [AVL ROTATE] Rotação à esquerda na AVL
-2024-08-11 17:29:16: [AVL INSERT] Ordem de Serviço 15 adicionada na AVL. Altura: 4
-2024-08-11 17:29:17: [CACHE INSERT] (11, 12, 7, 13, 14, 15, , , , , , , , , , , , , , )
-2024-08-11 17:29:19: [AVL ROTATE] Rotação à esquerda na AVL
-2024-08-11 17:29:19: [AVL INSERT] Ordem de Serviço 16 adicionada na AVL. Altura: 4
-2024-08-11 17:29:19: [CACHE INSERT] (11, 12, 7, 13, 14, 15, 16, , , , , , , , , , , , , )
-2024-08-11 17:29:24: [AVL ROTATE] Rotação à esquerda na AVL
-2024-08-11 17:29:24: [AVL INSERT] Ordem de Serviço 17 adicionada na AVL. Altura: 4
-2024-08-11 17:29:24: [CACHE INSERT] (11, 12, 7, 13, 14, 15, 16, 17, , , , , , , , , , , , )
-2024-08-11 17:29:28: [AVL ROTATE] Rotação à esquerda na AVL
-2024-08-11 17:29:28: [AVL INSERT] Ordem de Serviço 18 adicionada na AVL. Altura: 4
-2024-08-11 17:29:28: [CACHE INSERT] (11, 12, 7, 13, 14, 15, 16, 17, 18, , , , , , , , , , , )
-2024-08-11 17:29:31: [AVL ROTATE] Rotação à esquerda na AVL
-2024-08-11 17:29:31: [AVL INSERT] Ordem de Serviço 19 adicionada na AVL. Altura: 4
-2024-08-11 17:29:31: [CACHE INSERT] (11, 12, 7, 13, 14, 15, 16, 17, 18, 19, , , , , , , , , , )
-2024-08-11 17:29:41: [AVL ROTATE] Rotação à esquerda na AVL
-2024-08-11 17:29:41: [AVL INSERT] Ordem de Serviço 20 adicionada na AVL. Altura: 4
-2024-08-11 17:29:41: [CACHE INSERT] (11, 12, 7, 13, 14, 15, 16, 17, 18, 19, 20, , , , , , , , , )
-2024-08-11 17:29:43: [AVL INSERT] Ordem de Serviço 21 adicionada na AVL. Altura: 5
-2024-08-11 17:29:43: [CACHE INSERT] (11, 12, 7, 13, 14, 15, 16, 17, 18, 19, 20, 21, , , , , , , , )
-2024-08-11 17:29:45: [AVL ROTATE] Rotação à esquerda na AVL
-2024-08-11 17:29:45: [AVL INSERT] Ordem de Serviço 22 adicionada na AVL. Altura: 5
-2024-08-11 17:29:45: [CACHE INSERT] (11, 12, 7, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, , , , , , , )
-2024-08-11 17:29:48: [AVL ROTATE] Rotação à esquerda na AVL
-2024-08-11 17:29:48: [AVL INSERT] Ordem de Serviço 23 adicionada na AVL. Altura: 5
-2024-08-11 17:29:48: [CACHE INSERT] (11, 12, 7, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, , , , , , )
-2024-08-11 17:29:50: [AVL ROTATE] Rotação à esquerda na AVL
-2024-08-11 17:29:50: [AVL INSERT] Ordem de Serviço 24 adicionada na AVL. Altura: 5
-2024-08-11 17:29:50: [CACHE INSERT] (11, 12, 7, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, , , , , )
-2024-08-11 17:30:18: [CACHE MISS] Ordem de Serviço 1 não encontrada em cache
-2024-08-11 17:30:18: [AVL MISS] Ordem de Serviço 1 não encontrada na AVL
-2024-08-11 17:30:20: [CACHE MISS] Ordem de Serviço 2 não encontrada em cache
-2024-08-11 17:30:20: [CACHE INSERT] (2, , , , , , , , , , , , , , , , , , , )
-2024-08-11 17:30:20: [AVL HIT] Ordem de Serviço 2 encontrada
-2024-08-11 17:30:21: [AVL MISS] Ordem de Serviço 3 não encontrada na AVL
-2024-08-11 17:30:22: [AVL MISS] Ordem de Serviço 4 não encontrada na AVL
-2024-08-11 17:30:24: [AVL MISS] Ordem de Serviço 4 não encontrada na AVL
-2024-08-11 17:30:25: [AVL MISS] Ordem de Serviço 5 não encontrada na AVL
-2024-08-11 17:30:26: [AVL REMOVE] Ordem de Serviço 6 removida da AVL. Altura: 5
-2024-08-11 17:30:26: [CACHE REMOVE] (2, , , , , , , , , , , , , , , , , , , )
-2024-08-11 17:30:29: [AVL REMOVE] Ordem de Serviço 7 removida da AVL. Altura: 5
-2024-08-11 17:30:29: [CACHE REMOVE] (2, , , , , , , , , , , , , , , , , , , )
-2024-08-11 17:30:32: [CACHE MISS] Ordem de Serviço 5 não encontrada em cache
-2024-08-11 17:30:32: [AVL MISS] Ordem de Serviço 5 não encontrada na AVL
-2024-08-11 17:30:33: [CACHE MISS] Ordem de Serviço 8 não encontrada em cache
-2024-08-11 17:30:34: [CACHE INSERT] (2, 8, , , , , , , , , , , , , , , , , , )
-2024-08-11 17:30:34: [AVL HIT] Ordem de Serviço 8 encontrada
-2024-08-11 17:30:35: [CACHE MISS] Ordem de Serviço 9 não encontrada em cache
-2024-08-11 17:30:35: [AVL MISS] Ordem de Serviço 9 não encontrada na AVL
-2024-08-11 17:30:36: [CACHE MISS] Ordem de Serviço 0 não encontrada em cache
-2024-08-11 17:30:36: [AVL MISS] Ordem de Serviço 0 não encontrada na AVL
-2024-08-11 17:30:38: [CACHE MISS] Ordem de Serviço 11 não encontrada em cache
-2024-08-11 17:30:38: [CACHE INSERT] (2, 8, 11, , , , , , , , , , , , , , , , , )
-2024-08-11 17:30:38: [AVL HIT] Ordem de Serviço 11 encontrada
-2024-08-11 17:30:40: [CACHE MISS] Ordem de Serviço 12 não encontrada em cache
-2024-08-11 17:30:40: [CACHE INSERT] (2, 8, 11, 12, , , , , , , , , , , , , , , , )
-2024-08-11 17:30:40: [AVL HIT] Ordem de Serviço 12 encontrada
-2024-08-11 17:30:41: [CACHE MISS] Ordem de Serviço 13 não encontrada em cache
-2024-08-11 17:30:41: [CACHE INSERT] (2, 8, 11, 12, 13, , , , , , , , , , , , , , , )
-2024-08-11 17:30:41: [AVL HIT] Ordem de Serviço 13 encontrada
-2024-08-11 17:30:43: [CACHE MISS] Ordem de Serviço 14 não encontrada em cache
-2024-08-11 17:30:43: [CACHE INSERT] (2, 8, 11, 12, 13, 14, , , , , , , , , , , , , , )
-2024-08-11 17:30:43: [AVL HIT] Ordem de Serviço 14 encontrada
-2024-08-11 17:30:44: [CACHE MISS] Ordem de Serviço 15 não encontrada em cache
-2024-08-11 17:30:44: [CACHE INSERT] (2, 8, 11, 12, 13, 14, 15, , , , , , , , , , , , , )
-2024-08-11 17:30:44: [AVL HIT] Ordem de Serviço 15 encontrada
-2024-08-11 17:30:46: [CACHE MISS] Ordem de Serviço 16 não encontrada em cache
-2024-08-11 17:30:46: [CACHE INSERT] (2, 8, 11, 12, 13, 14, 15, 16, , , , , , , , , , , , )
-2024-08-11 17:30:46: [AVL HIT] Ordem de Serviço 16 encontrada
-2024-08-11 17:30:48: [CACHE MISS] Ordem de Serviço 17 não encontrada em cache
-2024-08-11 17:30:48: [CACHE INSERT] (2, 8, 11, 12, 13, 14, 15, 16, 17, , , , , , , , , , , )
-2024-08-11 17:30:48: [AVL HIT] Ordem de Serviço 17 encontrada
-2024-08-11 17:30:50: [CACHE MISS] Ordem de Serviço 18 não encontrada em cache
-2024-08-11 17:30:50: [CACHE INSERT] (2, 8, 11, 12, 13, 14, 15, 16, 17, 18, , , , , , , , , , )
-2024-08-11 17:30:50: [AVL HIT] Ordem de Serviço 18 encontrada
-2024-08-11 17:30:52: [CACHE HIT] Ordem de Serviço 18 encontrada em cache
-2024-08-11 17:30:54: [CACHE MISS] Ordem de Serviço 19 não encontrada em cache
-2024-08-11 17:30:54: [CACHE INSERT] (2, 8, 11, 12, 13, 14, 15, 16, 17, 18, 19, , , , , , , , , )
-2024-08-11 17:30:54: [AVL HIT] Ordem de Serviço 19 encontrada
-2024-08-11 17:30:57: [CACHE MISS] Ordem de Serviço 20 não encontrada em cache
-2024-08-11 17:30:57: [CACHE INSERT] (2, 8, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, , , , , , , , )
-2024-08-11 17:30:57: [AVL HIT] Ordem de Serviço 20 encontrada
-2024-08-11 17:30:59: [CACHE MISS] Ordem de Serviço 21 não encontrada em cache
-2024-08-11 17:30:59: [CACHE INSERT] (2, 8, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, , , , , , , )
-2024-08-11 17:30:59: [AVL HIT] Ordem de Serviço 21 encontrada
-2024-08-11 17:31:00: [CACHE MISS] Ordem de Serviço 22 não encontrada em cache
-2024-08-11 17:31:00: [CACHE INSERT] (2, 8, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, , , , , , )
-2024-08-11 17:31:00: [AVL HIT] Ordem de Serviço 22 encontrada
-2024-08-11 17:31:01: [CACHE MISS] Ordem de Serviço 23 não encontrada em cache
-2024-08-11 17:31:01: [CACHE INSERT] (2, 8, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, , , , , )
-2024-08-11 17:31:01: [AVL HIT] Ordem de Serviço 23 encontrada
-2024-08-11 17:31:03: [CACHE MISS] Ordem de Serviço 24 não encontrada em cache
-2024-08-11 17:31:03: [CACHE INSERT] (2, 8, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, , , , )
-2024-08-11 17:31:03: [AVL HIT] Ordem de Serviço 24 encontrada
-2024-08-11 17:31:05: [CACHE HIT] Ordem de Serviço 24 encontrada em cache
-2024-08-11 17:31:06: [CACHE MISS] Ordem de Serviço 25 não encontrada em cache
-2024-08-11 17:31:06: [AVL MISS] Ordem de Serviço 25 não encontrada na AVL
-2024-08-11 17:31:08: [CACHE MISS] Ordem de Serviço 26 não encontrada em cache
-2024-08-11 17:31:08: [AVL MISS] Ordem de Serviço 26 não encontrada na AVL
-2024-08-11 17:31:18: [AVL ROTATE] Rotação à esquerda na AVL
-2024-08-11 17:31:18: [AVL INSERT] Ordem de Serviço 25 adicionada na AVL. Altura: 5
-2024-08-11 17:31:18: [CACHE INSERT] (2, 8, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, , , )
-2024-08-11 17:31:22: [AVL ROTATE] Rotação à esquerda na AVL
-2024-08-11 17:31:22: [AVL INSERT] Ordem de Serviço 26 adicionada na AVL. Altura: 5
-2024-08-11 17:31:22: [CACHE INSERT] (2, 8, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, , )
-2024-08-11 17:31:25: [AVL ROTATE] Rotação à esquerda na AVL
-2024-08-11 17:31:25: [AVL INSERT] Ordem de Serviço 27 adicionada na AVL. Altura: 5
-2024-08-11 17:31:25: [CACHE INSERT] (2, 8, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, )
-2024-08-11 17:31:39: [AVL ROTATE] Rotação à esquerda na AVL
-2024-08-11 17:31:39: [AVL INSERT] Ordem de Serviço 28 adicionada na AVL. Altura: 5
-2024-08-11 17:31:39: [CACHE INSERT] (28, 8, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, )
-2024-08-11 17:33:53: [CACHE MISS] Ordem de Serviço 10 não encontrada em cache
-2024-08-11 17:33:53: [CACHE INSERT] (10, , , , )
-2024-08-11 17:33:53: [AVL HIT] Ordem de Serviço 10 encontrada
-2024-08-11 17:33:55: [CACHE MISS] Ordem de Serviço 11 não encontrada em cache
-2024-08-11 17:33:55: [CACHE INSERT] (10, 11, , , )
-2024-08-11 17:33:55: [AVL HIT] Ordem de Serviço 11 encontrada
-2024-08-11 17:33:57: [CACHE MISS] Ordem de Serviço 12 não encontrada em cache
-2024-08-11 17:33:57: [CACHE INSERT] (10, 11, 12, , )
-2024-08-11 17:33:57: [AVL HIT] Ordem de Serviço 12 encontrada
-2024-08-11 17:33:58: [CACHE MISS] Ordem de Serviço 13 não encontrada em cache
-2024-08-11 17:33:58: [CACHE INSERT] (10, 11, 12, 13, )
-2024-08-11 17:33:58: [AVL HIT] Ordem de Serviço 13 encontrada
-2024-08-11 17:34:00: [CACHE MISS] Ordem de Serviço 14 não encontrada em cache
-2024-08-11 17:34:00: [CACHE INSERT] (10, 11, 12, 13, 14)
-2024-08-11 17:34:00: [AVL HIT] Ordem de Serviço 14 encontrada
-2024-08-11 17:34:01: [CACHE MISS] Ordem de Serviço 15 não encontrada em cache
-2024-08-11 17:34:01: [CACHE INSERT] (15, 11, 12, 13, 14)
-2024-08-11 17:34:01: [AVL HIT] Ordem de Serviço 15 encontrada
-2024-08-11 17:34:12: [CACHE MISS] Ordem de Serviço 16 não encontrada em cache
-2024-08-11 17:34:12: [CACHE INSERT] (15, 16, 12, 13, 14)
-2024-08-11 17:34:12: [AVL HIT] Ordem de Serviço 16 encontrada
-2024-08-11 17:34:24: [CACHE HIT] Ordem de Serviço 13 encontrada em cache
+2024-08-12 16:48:52: [AVL INSERT] Ordem de Serviço 1 adicionada na AVL. Altura: 1
+2024-08-12 16:48:52: [CACHE INSERT] (1, , , , , , , , , , , , , , , , , , , )
+2024-08-12 16:48:52: [AVL INSERT] Ordem de Serviço 2 adicionada na AVL. Altura: 2
+2024-08-12 16:48:52: [CACHE INSERT] (1, 2, , , , , , , , , , , , , , , , , , )
+2024-08-12 16:48:52: [AVL ROTATE] Rotação à esquerda na AVL
+2024-08-12 16:48:52: [AVL INSERT] Ordem de Serviço 3 adicionada na AVL. Altura: 2
+2024-08-12 16:48:52: [CACHE INSERT] (1, 2, 3, , , , , , , , , , , , , , , , , )
+2024-08-12 16:48:52: [AVL INSERT] Ordem de Serviço 4 adicionada na AVL. Altura: 3
+2024-08-12 16:48:52: [CACHE INSERT] (1, 2, 3, 4, , , , , , , , , , , , , , , , )
+2024-08-12 16:48:52: [AVL ROTATE] Rotação à esquerda na AVL
+2024-08-12 16:48:52: [AVL INSERT] Ordem de Serviço 5 adicionada na AVL. Altura: 3
+2024-08-12 16:48:52: [CACHE INSERT] (1, 2, 3, 4, 5, , , , , , , , , , , , , , , )
+2024-08-12 16:48:53: [AVL ROTATE] Rotação à esquerda na AVL
+2024-08-12 16:48:53: [AVL INSERT] Ordem de Serviço 6 adicionada na AVL. Altura: 3
+2024-08-12 16:48:53: [CACHE INSERT] (1, 2, 3, 4, 5, 6, , , , , , , , , , , , , , )
+2024-08-12 16:48:53: [AVL ROTATE] Rotação à esquerda na AVL
+2024-08-12 16:48:53: [AVL INSERT] Ordem de Serviço 7 adicionada na AVL. Altura: 3
+2024-08-12 16:48:53: [CACHE INSERT] (1, 2, 3, 4, 5, 6, 7, , , , , , , , , , , , , )
+2024-08-12 16:48:53: [AVL INSERT] Ordem de Serviço 8 adicionada na AVL. Altura: 4
+2024-08-12 16:48:53: [CACHE INSERT] (1, 2, 3, 4, 5, 6, 7, 8, , , , , , , , , , , , )
+2024-08-12 16:48:53: [AVL ROTATE] Rotação à esquerda na AVL
+2024-08-12 16:48:53: [AVL INSERT] Ordem de Serviço 9 adicionada na AVL. Altura: 4
+2024-08-12 16:48:53: [CACHE INSERT] (1, 2, 3, 4, 5, 6, 7, 8, 9, , , , , , , , , , , )
+2024-08-12 16:48:53: [AVL ROTATE] Rotação à esquerda na AVL
+2024-08-12 16:48:53: [AVL INSERT] Ordem de Serviço 10 adicionada na AVL. Altura: 4
+2024-08-12 16:48:53: [CACHE INSERT] (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, , , , , , , , , , )
+2024-08-12 16:48:53: [AVL ROTATE] Rotação à esquerda na AVL
+2024-08-12 16:48:53: [AVL INSERT] Ordem de Serviço 11 adicionada na AVL. Altura: 4
+2024-08-12 16:48:53: [CACHE INSERT] (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, , , , , , , , , )
+2024-08-12 16:48:53: [AVL ROTATE] Rotação à esquerda na AVL
+2024-08-12 16:48:53: [AVL INSERT] Ordem de Serviço 12 adicionada na AVL. Altura: 4
+2024-08-12 16:48:53: [CACHE INSERT] (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, , , , , , , , )
+2024-08-12 16:48:53: [AVL ROTATE] Rotação à esquerda na AVL
+2024-08-12 16:48:53: [AVL INSERT] Ordem de Serviço 13 adicionada na AVL. Altura: 4
+2024-08-12 16:48:58: [CACHE INSERT] (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, , , , , , , )
+2024-08-12 16:48:58: [AVL ROTATE] Rotação à esquerda na AVL
+2024-08-12 16:48:58: [AVL INSERT] Ordem de Serviço 14 adicionada na AVL. Altura: 4
+2024-08-12 16:48:58: [CACHE INSERT] (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, , , , , , )
+2024-08-12 16:48:58: [AVL ROTATE] Rotação à esquerda na AVL
+2024-08-12 16:48:58: [AVL INSERT] Ordem de Serviço 15 adicionada na AVL. Altura: 4
+2024-08-12 16:48:58: [CACHE INSERT] (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, , , , , )
+2024-08-12 16:48:58: [AVL INSERT] Ordem de Serviço 16 adicionada na AVL. Altura: 5
+2024-08-12 16:48:58: [CACHE INSERT] (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, , , , )
+2024-08-12 16:48:58: [AVL ROTATE] Rotação à esquerda na AVL
+2024-08-12 16:48:58: [AVL INSERT] Ordem de Serviço 17 adicionada na AVL. Altura: 5
+2024-08-12 16:48:58: [CACHE INSERT] (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, , , )
+2024-08-12 16:48:58: [AVL ROTATE] Rotação à esquerda na AVL
+2024-08-12 16:48:58: [AVL INSERT] Ordem de Serviço 18 adicionada na AVL. Altura: 5
+2024-08-12 16:48:58: [CACHE INSERT] (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, , )
+2024-08-12 16:48:58: [AVL ROTATE] Rotação à esquerda na AVL
+2024-08-12 16:48:58: [AVL INSERT] Ordem de Serviço 19 adicionada na AVL. Altura: 5
+2024-08-12 16:48:58: [CACHE INSERT] (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, )
+2024-08-12 16:48:59: [AVL ROTATE] Rotação à esquerda na AVL
+2024-08-12 16:48:59: [AVL INSERT] Ordem de Serviço 20 adicionada na AVL. Altura: 5
+2024-08-12 16:48:59: [CACHE INSERT] (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20)
+2024-08-12 16:48:59: [AVL ROTATE] Rotação à esquerda na AVL
+2024-08-12 16:48:59: [AVL INSERT] Ordem de Serviço 21 adicionada na AVL. Altura: 5
+2024-08-12 16:48:59: [CACHE INSERT] (21, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20)
+2024-08-12 16:48:59: [AVL ROTATE] Rotação à esquerda na AVL
+2024-08-12 16:48:59: [AVL INSERT] Ordem de Serviço 22 adicionada na AVL. Altura: 5
+2024-08-12 16:48:59: [CACHE INSERT] (21, 22, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20)
+2024-08-12 16:48:59: [AVL ROTATE] Rotação à esquerda na AVL
+2024-08-12 16:48:59: [AVL INSERT] Ordem de Serviço 23 adicionada na AVL. Altura: 5
+2024-08-12 16:48:59: [CACHE INSERT] (21, 22, 23, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20)
+2024-08-12 16:48:59: [AVL ROTATE] Rotação à esquerda na AVL
+2024-08-12 16:48:59: [AVL INSERT] Ordem de Serviço 24 adicionada na AVL. Altura: 5
+2024-08-12 16:48:59: [CACHE INSERT] (21, 22, 23, 24, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20)
+2024-08-12 16:48:59: [AVL ROTATE] Rotação à esquerda na AVL
+2024-08-12 16:48:59: [AVL INSERT] Ordem de Serviço 25 adicionada na AVL. Altura: 5
+2024-08-12 16:48:59: [CACHE INSERT] (21, 22, 23, 24, 25, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20)
+2024-08-12 16:48:59: [AVL ROTATE] Rotação à esquerda na AVL
+2024-08-12 16:48:59: [AVL INSERT] Ordem de Serviço 26 adicionada na AVL. Altura: 5
+2024-08-12 16:48:59: [CACHE INSERT] (21, 22, 23, 24, 25, 26, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20)
+2024-08-12 16:48:59: [AVL ROTATE] Rotação à esquerda na AVL
+2024-08-12 16:48:59: [AVL INSERT] Ordem de Serviço 27 adicionada na AVL. Altura: 5
+2024-08-12 16:48:59: [CACHE INSERT] (21, 22, 23, 24, 25, 26, 27, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20)
+2024-08-12 16:49:00: [AVL ROTATE] Rotação à esquerda na AVL
+2024-08-12 16:49:00: [AVL INSERT] Ordem de Serviço 28 adicionada na AVL. Altura: 5
+2024-08-12 16:49:00: [CACHE INSERT] (21, 22, 23, 24, 25, 26, 27, 28, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20)
+2024-08-12 16:49:00: [AVL ROTATE] Rotação à esquerda na AVL
+2024-08-12 16:49:00: [AVL INSERT] Ordem de Serviço 29 adicionada na AVL. Altura: 5
+2024-08-12 16:49:00: [CACHE INSERT] (21, 22, 23, 24, 25, 26, 27, 28, 29, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20)
+2024-08-12 16:49:00: [AVL ROTATE] Rotação à esquerda na AVL
+2024-08-12 16:49:00: [AVL INSERT] Ordem de Serviço 30 adicionada na AVL. Altura: 5
+2024-08-12 16:49:00: [CACHE INSERT] (21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20)
+2024-08-12 16:49:00: [AVL ROTATE] Rotação à esquerda na AVL
+2024-08-12 16:49:00: [AVL INSERT] Ordem de Serviço 31 adicionada na AVL. Altura: 5
+2024-08-12 16:49:00: [CACHE INSERT] (21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 12, 13, 14, 15, 16, 17, 18, 19, 20)
+2024-08-12 16:49:00: [AVL INSERT] Ordem de Serviço 32 adicionada na AVL. Altura: 6
+2024-08-12 16:49:00: [CACHE INSERT] (21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 13, 14, 15, 16, 17, 18, 19, 20)
+2024-08-12 16:49:00: [AVL ROTATE] Rotação à esquerda na AVL
+2024-08-12 16:49:00: [AVL INSERT] Ordem de Serviço 33 adicionada na AVL. Altura: 6
+2024-08-12 16:49:00: [CACHE INSERT] (21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 14, 15, 16, 17, 18, 19, 20)
+2024-08-12 16:49:00: [AVL ROTATE] Rotação à esquerda na AVL
+2024-08-12 16:49:00: [AVL INSERT] Ordem de Serviço 34 adicionada na AVL. Altura: 6
+2024-08-12 16:49:00: [CACHE INSERT] (21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 15, 16, 17, 18, 19, 20)
+2024-08-12 16:49:00: [AVL ROTATE] Rotação à esquerda na AVL
+2024-08-12 16:49:01: [AVL INSERT] Ordem de Serviço 35 adicionada na AVL. Altura: 6
+2024-08-12 16:49:01: [CACHE INSERT] (21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 16, 17, 18, 19, 20)
+2024-08-12 16:49:01: [AVL ROTATE] Rotação à esquerda na AVL
+2024-08-12 16:49:01: [AVL INSERT] Ordem de Serviço 36 adicionada na AVL. Altura: 6
+2024-08-12 16:49:01: [CACHE INSERT] (21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 17, 18, 19, 20)
+2024-08-12 16:49:01: [AVL ROTATE] Rotação à esquerda na AVL
+2024-08-12 16:49:01: [AVL INSERT] Ordem de Serviço 37 adicionada na AVL. Altura: 6
+2024-08-12 16:49:01: [CACHE INSERT] (21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 18, 19, 20)
+2024-08-12 16:49:01: [AVL ROTATE] Rotação à esquerda na AVL
+2024-08-12 16:49:01: [AVL INSERT] Ordem de Serviço 38 adicionada na AVL. Altura: 6
+2024-08-12 16:49:01: [CACHE INSERT] (21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 19, 20)
+2024-08-12 16:49:01: [AVL ROTATE] Rotação à esquerda na AVL
+2024-08-12 16:49:01: [AVL INSERT] Ordem de Serviço 39 adicionada na AVL. Altura: 6
+2024-08-12 16:49:01: [CACHE INSERT] (21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 20)
+2024-08-12 16:49:01: [AVL ROTATE] Rotação à esquerda na AVL
+2024-08-12 16:49:01: [AVL INSERT] Ordem de Serviço 40 adicionada na AVL. Altura: 6
+2024-08-12 16:49:01: [CACHE INSERT] (21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40)
+2024-08-12 16:49:01: [AVL ROTATE] Rotação à esquerda na AVL
+2024-08-12 16:49:01: [AVL INSERT] Ordem de Serviço 41 adicionada na AVL. Altura: 6
+2024-08-12 16:49:01: [CACHE INSERT] (41, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40)
+2024-08-12 16:49:02: [AVL ROTATE] Rotação à esquerda na AVL
+2024-08-12 16:49:02: [AVL INSERT] Ordem de Serviço 42 adicionada na AVL. Altura: 6
+2024-08-12 16:49:02: [CACHE INSERT] (41, 42, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40)
+2024-08-12 16:49:02: [AVL ROTATE] Rotação à esquerda na AVL
+2024-08-12 16:49:02: [AVL INSERT] Ordem de Serviço 43 adicionada na AVL. Altura: 6
+2024-08-12 16:49:02: [CACHE INSERT] (41, 42, 43, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40)
+2024-08-12 16:49:02: [AVL ROTATE] Rotação à esquerda na AVL
+2024-08-12 16:49:02: [AVL INSERT] Ordem de Serviço 44 adicionada na AVL. Altura: 6
+2024-08-12 16:49:02: [CACHE INSERT] (41, 42, 43, 44, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40)
+2024-08-12 16:49:02: [AVL ROTATE] Rotação à esquerda na AVL
+2024-08-12 16:49:02: [AVL INSERT] Ordem de Serviço 45 adicionada na AVL. Altura: 6
+2024-08-12 16:49:02: [CACHE INSERT] (41, 42, 43, 44, 45, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40)
+2024-08-12 16:49:02: [AVL ROTATE] Rotação à esquerda na AVL
+2024-08-12 16:49:02: [AVL INSERT] Ordem de Serviço 46 adicionada na AVL. Altura: 6
+2024-08-12 16:49:02: [CACHE INSERT] (41, 42, 43, 44, 45, 46, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40)
+2024-08-12 16:49:02: [AVL ROTATE] Rotação à esquerda na AVL
+2024-08-12 16:49:02: [AVL INSERT] Ordem de Serviço 47 adicionada na AVL. Altura: 6
+2024-08-12 16:49:02: [CACHE INSERT] (41, 42, 43, 44, 45, 46, 47, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40)
+2024-08-12 16:49:03: [AVL ROTATE] Rotação à esquerda na AVL
+2024-08-12 16:49:03: [AVL INSERT] Ordem de Serviço 48 adicionada na AVL. Altura: 6
+2024-08-12 16:49:03: [CACHE INSERT] (41, 42, 43, 44, 45, 46, 47, 48, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40)
+2024-08-12 16:49:03: [AVL ROTATE] Rotação à esquerda na AVL
+2024-08-12 16:49:03: [AVL INSERT] Ordem de Serviço 49 adicionada na AVL. Altura: 6
+2024-08-12 16:49:03: [CACHE INSERT] (41, 42, 43, 44, 45, 46, 47, 48, 49, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40)
+2024-08-12 16:49:03: [AVL ROTATE] Rotação à esquerda na AVL
+2024-08-12 16:49:03: [AVL INSERT] Ordem de Serviço 50 adicionada na AVL. Altura: 6
+2024-08-12 16:49:03: [CACHE INSERT] (41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40)
+2024-08-12 16:49:03: [AVL ROTATE] Rotação à esquerda na AVL
+2024-08-12 16:49:03: [AVL INSERT] Ordem de Serviço 51 adicionada na AVL. Altura: 6
+2024-08-12 16:49:03: [CACHE INSERT] (41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 32, 33, 34, 35, 36, 37, 38, 39, 40)
+2024-08-12 16:49:03: [AVL ROTATE] Rotação à esquerda na AVL
+2024-08-12 16:49:04: [AVL INSERT] Ordem de Serviço 52 adicionada na AVL. Altura: 6
+2024-08-12 16:49:04: [CACHE INSERT] (41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 33, 34, 35, 36, 37, 38, 39, 40)
+2024-08-12 16:49:04: [AVL ROTATE] Rotação à esquerda na AVL
+2024-08-12 16:49:04: [AVL INSERT] Ordem de Serviço 53 adicionada na AVL. Altura: 6
+2024-08-12 16:49:04: [CACHE INSERT] (41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 34, 35, 36, 37, 38, 39, 40)
+2024-08-12 16:49:04: [AVL ROTATE] Rotação à esquerda na AVL
+2024-08-12 16:49:04: [AVL INSERT] Ordem de Serviço 54 adicionada na AVL. Altura: 6
+2024-08-12 16:49:04: [CACHE INSERT] (41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 35, 36, 37, 38, 39, 40)
+2024-08-12 16:49:04: [AVL ROTATE] Rotação à esquerda na AVL
+2024-08-12 16:49:04: [AVL INSERT] Ordem de Serviço 55 adicionada na AVL. Altura: 6
+2024-08-12 16:49:04: [CACHE INSERT] (41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 36, 37, 38, 39, 40)
+2024-08-12 16:49:04: [AVL ROTATE] Rotação à esquerda na AVL
+2024-08-12 16:49:04: [AVL INSERT] Ordem de Serviço 56 adicionada na AVL. Altura: 6
+2024-08-12 16:49:04: [CACHE INSERT] (41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 37, 38, 39, 40)
+2024-08-12 16:49:04: [AVL ROTATE] Rotação à esquerda na AVL
+2024-08-12 16:49:04: [AVL INSERT] Ordem de Serviço 57 adicionada na AVL. Altura: 6
+2024-08-12 16:49:04: [CACHE INSERT] (41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 38, 39, 40)
+2024-08-12 16:49:05: [AVL ROTATE] Rotação à esquerda na AVL
+2024-08-12 16:49:05: [AVL INSERT] Ordem de Serviço 58 adicionada na AVL. Altura: 6
+2024-08-12 16:49:05: [CACHE INSERT] (41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 39, 40)
+2024-08-12 16:49:05: [AVL ROTATE] Rotação à esquerda na AVL
+2024-08-12 16:49:05: [AVL INSERT] Ordem de Serviço 59 adicionada na AVL. Altura: 6
+2024-08-12 16:49:05: [CACHE INSERT] (41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 40)
+2024-08-12 16:49:05: [AVL ROTATE] Rotação à esquerda na AVL
+2024-08-12 16:49:05: [AVL INSERT] Ordem de Serviço 60 adicionada na AVL. Altura: 6
+2024-08-12 16:49:05: [CACHE INSERT] (41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60)
+2024-08-12 20:23:07: [CACHE MISS] Ordem de Serviço 1 não encontrada em cache
+2024-08-12 20:23:07: [CACHE INSERT] (1, , , , , , , , , , , , , , , , , , , )
+2024-08-12 20:23:07: [AVL HIT] Ordem de Serviço 1 encontrada
+2024-08-12 20:23:47: [CACHE HIT] Ordem de Serviço 1 encontrada em cache
+2024-08-12 20:47:11: [CACHE MISS] Ordem de Serviço 3 não encontrada em cache
+2024-08-12 20:47:11: [CACHE INSERT] (3, , , , , , , , , , , , , , , , , , , )
+2024-08-12 20:47:11: [AVL HIT] Ordem de Serviço 3 encontrada
+2024-08-12 20:47:42: [CACHE MISS] Ordem de Serviço 100 não encontrada em cache
+2024-08-12 20:47:42: [AVL MISS] Ordem de Serviço 100 não encontrada na AVL
+2024-08-12 20:48:12: [CACHE MISS] Ordem de Serviço 1 não encontrada em cache
+2024-08-12 20:48:12: [CACHE INSERT] (3, 1, , , , , , , , , , , , , , , , , , )
+2024-08-12 20:48:12: [AVL HIT] Ordem de Serviço 1 encontrada
+2024-08-12 20:48:27: [CACHE HIT] Ordem de Serviço 3 encontrada em cache

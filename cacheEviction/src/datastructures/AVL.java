@@ -23,8 +23,8 @@ public class AVL<T> implements Serializable, Iterable<T> {
             return;
         }
 
-        System.out.println(tree.data + "\n---------------------------------");
         order(tree.left);
+        System.out.println(tree.data + "\n---------------------------------");
         order(tree.right);
     }
 

@@ -13,8 +13,8 @@ public class App {
     public static void main(String[] args) throws Exception {
         LogDAO.loadLog();
 
-        /* popularDatabase();
-        System.out.println("Populado com sucesso!"); */
+        //popularDatabase();
+        //System.out.println("Populado com sucesso!");
         
         Controller.limparTela();
         if (Controller.realizarLogin()) {
@@ -24,6 +24,7 @@ public class App {
         }
     }
 
+    @SuppressWarnings("unused")
     private static void popularDatabase() {
         OrdemServicoDAO ordemServicoDAO = new OrdemServicoDAO();
         Usuario chatGPT = new Usuario("ChatGPT", "12345678900");

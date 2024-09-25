@@ -12,6 +12,7 @@ import model.entities.Usuario;
 
 public class UsuarioDAO {
     private AVL<Usuario> usuarios;
+    private final String ARQUIVO = "src/database/usuarios.dat"; 
 
     public UsuarioDAO() {
         usuarios = new AVL<>();
@@ -60,7 +61,7 @@ public class UsuarioDAO {
 
     public void updateArquivo() {
         try {
-            FileOutputStream fileOut = new FileOutputStream("database/usuarios.dat");
+            FileOutputStream fileOut = new FileOutputStream(ARQUIVO);
             ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);
             objectOut.writeObject(usuarios);
             objectOut.close();
@@ -73,11 +74,11 @@ public class UsuarioDAO {
     @SuppressWarnings("unchecked")
     public void carregarArquivo() {
         try {
-            File file = new File("database/usuarios.dat");
+            File file = new File(ARQUIVO);
             if (!file.exists()) {
                 file.createNewFile();
             } else {
-                FileInputStream fileIn = new FileInputStream("database/usuarios.dat");
+                FileInputStream fileIn = new FileInputStream(ARQUIVO);
                 ObjectInputStream objectIn = new ObjectInputStream(fileIn);
                 usuarios = (AVL<Usuario>) objectIn.readObject();
                 objectIn.close();

@@ -5,6 +5,7 @@ import java.util.Date;
 
 public class LogDAO {
     static private String log;
+    private static final String ARQUIVO = "src/database/log.txt"; 
 
     public LogDAO() {
         loadLog();
@@ -15,10 +16,10 @@ public class LogDAO {
 
         // Carregar o arquivo "log.txt" ou criar um novo
         try {
-            File file = new File("database/log.txt");
+            File file = new File(ARQUIVO);
 
             if (!file.createNewFile()) {
-                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream("database/log.txt"), "UTF-8"));
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(ARQUIVO), "UTF-8"));
                 String line;
 
                 while ((line = bufferedReader.readLine()) != null) {
@@ -42,7 +43,7 @@ public class LogDAO {
 
         // Salvar no arquivo "log.txt" com utf-8
         try {
-            BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("database/log.txt"), "UTF-8"));
+            BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(ARQUIVO), "UTF-8"));
             bufferedWriter.write(LogDAO.log);
             bufferedWriter.close();
         } catch (IOException e) {

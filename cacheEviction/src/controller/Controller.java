@@ -200,10 +200,10 @@ public class Controller {
     private static void listarTodosOS() {
         limparTela();
 
-        if (ordemServicoDAO.getTamanho() == 1) {
+        if (ordemServicoDAO.getOcupacao() == 1) {
             System.out.println(Color.CYAN + 1 + " Ordem de Serviço encontrada:\n" + Color.RESET);
         } else {
-            System.out.println(Color.CYAN + ordemServicoDAO.getTamanho() + " Ordens de Serviço encontradas:\n" + Color.RESET);
+            System.out.println(Color.CYAN + ordemServicoDAO.getOcupacao() + " Ordens de Serviço encontradas:\n" + Color.RESET);
         }
 
         ordemServicoDAO.listarTodosOS();

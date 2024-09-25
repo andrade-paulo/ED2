@@ -2,38 +2,39 @@ package model.DAO;
 
 import java.io.*;
 
-import datastructures.AVL;
-import datastructures.Cache;
+import datastructures.Hash;
+import datastructures.HashCache;
 import model.entities.OrdemServico;
 import model.entities.Usuario;
 
 public class OrdemServicoDAO {
-    private AVL<OrdemServico> ordensServico;
-    private Cache cache;
-    private int tamanho;
+    private Hash<OrdemServico> ordensServico;
+    private HashCache<OrdemServico> cache;
+    private int ocupacao;
+    private final int TAMANHO_INICIAL = 5;
+    private final String ARQUIVO = "src/database/database.dat"; 
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     public OrdemServicoDAO() {
-        ordensServico = new AVL<>();
+        ordensServico = new Hash<>(TAMANHO_INICIAL);
         carregarArquivo();
-        cache = new Cache();
+        cache = new HashCache();
 
         if (ordensServico.isEmpty()) {
             OrdemServico.setContador(0);
-            tamanho = 0;
+            ocupacao = 0;
         } else {
-            OrdemServico.setContador(ordensServico.getLast().getCodigo());
-            tamanho = ordensServico.countNodes();
+            OrdemServico.setContador(ordensServico.getUltimo().getCodigo());
+            ocupacao = ordensServico.getOcupacao();
         }
     }
 
     public void addOrdemServico(OrdemServico ordemServico) {
-        ordensServico.insert(ordemServico.getCodigo(), ordemServico);
-        LogDAO.addLog("[AVL INSERT] Ordem de Serviço " + ordemServico.getCodigo() + " adicionada na AVL. Altura: " + ordensServico.high());
+        ordensServico.inserir(ordemServico.getCodigo(), ordemServico);
+        ocupacao++;
 
-        cache.inserir(ordemServico);
-        LogDAO.addLog("[CACHE INSERT] " + cache.toString());
-
-        tamanho++;
+        LogDAO.addLog("[DB INSERT] Ordem de Serviço " + ordemServico.getCodigo() + ", ocupação: " + ocupacao + "/" + ordensServico.getTamanho());
+        
         updateArquivo();
     }
 
@@ -42,49 +43,56 @@ public class OrdemServicoDAO {
         OrdemServico ordemServico = cache.buscar(codigo);
 
         if (ordemServico == null) {
-            LogDAO.addLog("[CACHE MISS] Ordem de Serviço " + codigo + " não encontrada em cache");
+            LogDAO.addLog("[CACHE MISS] Ordem de Serviço " + codigo + " não encontrada");
 
-            ordemServico = ordensServico.search(codigo);
+            ordemServico = ordensServico.buscar(codigo);
             
             if (ordemServico == null) {
-                LogDAO.addLog("[AVL MISS] Ordem de Serviço " + codigo + " não encontrada na AVL");
+                LogDAO.addLog("[DB MISS] Ordem de Serviço " + codigo + " não encontrada");
                 throw new Exception("Ordem de Serviço não encontrada");
             }
 
             // Insere na cache
-            cache.inserir(ordemServico);
-            LogDAO.addLog("[CACHE INSERT] " + cache.toString());
+            cache.inserir(ordemServico.getCodigo(), ordemServico);
         } else {
-            LogDAO.addLog("[CACHE HIT] Ordem de Serviço " + codigo + " encontrada em cache");
+            LogDAO.addLog("[CACHE HIT] Ordem de Serviço " + codigo + " encontrada");
             return ordemServico;
         }
         
-        LogDAO.addLog("[AVL HIT] Ordem de Serviço " + ordemServico.getCodigo() + " encontrada");
+        LogDAO.addLog("[DB HIT] Ordem de Serviço " + ordemServico.getCodigo() + " encontrada");
+        LogDAO.addLog("[CACHE INSERT] " + cache.toString());
         return ordemServico;
     }
 
     public void removerOrdemServico(int codigo) throws Exception {
         try {
-            ordensServico.remove(codigo);
-            LogDAO.addLog("[AVL REMOVE] Ordem de Serviço " + codigo + " removida da AVL. Altura: " + ordensServico.high());
+            ordensServico.remover(codigo);
         } catch (Exception e) {
-            LogDAO.addLog("[AVL MISS] Ordem de Serviço " + codigo + " não encontrada na AVL");
+            LogDAO.addLog("[DB MISS] Ordem de Serviço " + codigo + " não encontrada");
             throw new Exception("Ordem de Serviço não encontrada");
         }
         
-        cache.remover(codigo);
-        LogDAO.addLog("[CACHE REMOVE] " + cache.toString());
+        ocupacao--;
+        LogDAO.addLog("[DB REMOVE] Ordem de Serviço " + codigo + " removida" + ", ocupação: " + ocupacao + "/" + ordensServico.getTamanho());
         
-        tamanho--;
+        if (cache.buscar(codigo) != null) {
+            cache.remover(codigo);
+            LogDAO.addLog("[CACHE REMOVE] " + cache.toString());
+        }
+        
         updateArquivo();
     }
 
     public void updateOrdemServico(OrdemServico ordemServico) {
-        ordensServico.insert(ordemServico.getCodigo(), ordemServico);
-        cache.inserir(ordemServico);
+        ordensServico.inserir(ordemServico.getCodigo(), ordemServico);
+
+        // Atualiza apenas se a Ordem de Serviço já estiver na cache
+        if (cache.buscar(ordemServico.getCodigo()) != null) {
+            cache.inserir(ordemServico.getCodigo(), ordemServico);
+            LogDAO.addLog("[CACHE UPDATE] Chave " + ordemServico.getCodigo() + " atualizada");
+        }
 
         updateArquivo();
-        LogDAO.addLog("Ordem de Serviço " + ordemServico.getCodigo() + " atualizada");
     }
 
     public void clearCache() {
@@ -92,9 +100,9 @@ public class OrdemServicoDAO {
     }
 
     public void updateArquivo() {
-        // Abrir arquivo binário "database.dat" e atualizar com as OSs da AVL
+        // Abrir arquivo binário "database.dat" e atualizar com as OSs da Hash
         try {
-            FileOutputStream fileOut = new FileOutputStream("database/database.dat");
+            FileOutputStream fileOut = new FileOutputStream(ARQUIVO);
             ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);
             objectOut.writeObject(ordensServico);
             objectOut.close();
@@ -106,15 +114,15 @@ public class OrdemServicoDAO {
 
     @SuppressWarnings("unchecked")
     public void carregarArquivo() {
-        // Carregar arquivo binário "database.dat" e preencher AVL com as OSs
+        // Carregar arquivo binário "database.dat" e preencher Hash com as OSs
         try {
-            File file = new File("database/database.dat");
+            File file = new File(ARQUIVO);
             if (!file.exists()) {
                 file.createNewFile();
             } else {
-                FileInputStream fileIn = new FileInputStream("database/database.dat");
+                FileInputStream fileIn = new FileInputStream(ARQUIVO);
                 ObjectInputStream objectIn = new ObjectInputStream(fileIn);
-                ordensServico = (AVL<OrdemServico>) objectIn.readObject();
+                ordensServico = (Hash<OrdemServico>) objectIn.readObject();
                 objectIn.close();
                 fileIn.close();
             }
@@ -124,18 +132,18 @@ public class OrdemServicoDAO {
     }
 
     public void listarTodosOS() {
-        ordensServico.order();
+        ordensServico.mostrarValores();
     }
 
     public void listarOS(Usuario usuario) {
         for (OrdemServico ordemServico : ordensServico) {
-            if (ordemServico.getUsuario().equals(usuario)) {
+            if ((ordemServico != null) && ordemServico.getUsuario().equals(usuario)) {
                 System.out.println(ordemServico + "\n---------------------------------");
             }
         }
     }
 
-    public int getTamanho() {
-        return tamanho;
+    public int getOcupacao() {
+        return ocupacao;
     }
 }

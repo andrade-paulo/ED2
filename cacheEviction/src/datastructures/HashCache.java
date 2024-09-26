@@ -84,6 +84,9 @@ public class HashCache<T> implements Serializable, Iterable<T> {
             int i = 1;
             while (tabela[hashColisao(chave, i)] != null && tabela[hashColisao(chave, i)].chave != chave) {
                 i++;
+                if (i >= tamanhoMaximo) {
+                    return null;
+                }
             }
 
             if (tabela[hashColisao(chave, i)] != null) {

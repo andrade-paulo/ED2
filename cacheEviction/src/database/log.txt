@@ -1,19 +1,10 @@
-2024-09-25 09:56:39: [DB INSERT] Ordem de Serviço 4, ocupação: 4/5
-2024-09-25 09:56:50: [DB RESIZE] Redimensionando tabela de 5 para 11
-2024-09-25 09:56:50: [DB INSERT] Ordem de Serviço 5, ocupação: 5/11
-2024-09-25 09:57:06: [DB REMOVE] Ordem de Serviço 2 removida, ocupação: 4/11
-2024-09-25 09:57:16: [CACHE MISS] Ordem de Serviço 2 não encontrada
-2024-09-25 09:57:16: [DB MISS] Ordem de Serviço 2 não encontrada
-2024-09-25 09:57:22: [DB MISS] Ordem de Serviço 2 não encontrada
-2024-09-25 09:57:36: [CACHE MISS] Ordem de Serviço 4 não encontrada
-2024-09-25 09:57:36: [DB HIT] Ordem de Serviço 4 encontrada
-2024-09-25 09:57:36: [CACHE INSERT] [null, null, null, null, 4, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
-2024-09-25 09:57:52: [DB REMOVE] Ordem de Serviço 4 removida, ocupação: 3/11
-2024-09-25 09:57:52: [CACHE REMOVE] [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
-2024-09-25 09:58:03: [CACHE MISS] Ordem de Serviço 5 não encontrada
-2024-09-25 09:58:03: [DB HIT] Ordem de Serviço 5 encontrada
-2024-09-25 09:58:03: [CACHE INSERT] [null, null, null, null, null, 5, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
-2024-09-25 09:58:05: [DB UPDATE] Chave 5 atualizada
-2024-09-25 09:58:05: [CACHE UPDATE] Chave 5 atualizada
-2024-09-25 09:58:14: [CACHE MISS] Ordem de Serviço 4 não encontrada
-2024-09-25 09:58:14: [DB MISS] Ordem de Serviço 4 não encontrada
+2024-09-25 21:52:38: [DB INSERT] Ordem de Serviço 1, ocupação: 1/5
+2024-09-25 21:52:40: [DB INSERT] Ordem de Serviço 2, ocupação: 2/5
+2024-09-25 21:52:42: [DB INSERT] Ordem de Serviço 3, ocupação: 3/5
+2024-09-25 21:52:43: [DB INSERT] Ordem de Serviço 4, ocupação: 4/5
+2024-09-25 21:52:50: [DB REMOVE] Ordem de Serviço 4 removida, ocupação: 3/5
+2024-09-25 21:52:54: [DB INSERT] Ordem de Serviço 5, ocupação: 4/5
+2024-09-25 21:54:08: [DB REMOVE] Ordem de Serviço 5 removida, ocupação: 3/5
+2024-09-25 21:54:19: [DB REMOVE] Ordem de Serviço 3 removida, ocupação: 2/5
+2024-09-25 21:54:56: [DB COLLISION] Colisão na posição 1 com chave 6
+2024-09-25 21:54:56: [DB INSERT] Ordem de Serviço 6, ocupação: 3/5

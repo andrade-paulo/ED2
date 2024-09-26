@@ -89,7 +89,27 @@ public class App {
             "Configuração de ambiente virtual",
             "Troca de gabinete de computador",
             "Reparo de sistema de som",
-            "Instalação de software de automação"
+            "Instalação de software de automação",
+            "Troca de webcam",
+            "Manutenção de computador",
+            "Troca de tela",
+            "Instalação de software",
+            "Limpeza interna de computador",
+            "Substituição de teclado",
+            "Atualização de sistema operacional",
+            "Configuração de rede",
+            "Reparação de impressora",
+            "Troca de bateria de notebook",
+            "Recuperação de dados",
+            "Formatação de computador",
+            "Troca de HD",
+            "Instalação de antivírus",
+            "Configuração de e-mail",
+            "Substituição de memória RAM",
+            "Reparo de cabo de alimentação",
+            "Instalação de câmera de segurança",
+            "Configuração de roteador",
+            "Instalação de sistema de backup"
         );
 
         List<String> descricoes = Arrays.asList(
@@ -152,7 +172,27 @@ public class App {
             "Configuração de ambientes virtuais para testes e desenvolvimento de software.",
             "Substituição de gabinetes de computador para maior espaço ou melhor ventilação.",
             "Reparo de sistemas de som com problemas de áudio ou falha nos componentes.",
-            "Instalação de software de automação para otimização de processos."
+            "Instalação de software de automação para otimização de processos.",
+            "Substituição de webcam com defeito por uma nova e funcional.",
+            "Diagnóstico e resolução de problemas de hardware e software em computadores.",
+            "Substituição de tela danificada ou defeituosa de dispositivos eletrônicos.",
+            "Instalação de novos programas e aplicativos no computador do usuário.",
+            "Remoção de poeira e sujeira do interior do computador para evitar superaquecimento.",
+            "Substituição de teclados defeituosos em notebooks e desktops.",
+            "Atualização do sistema operacional para a versão mais recente e estável.",
+            "Configuração de redes locais ou sem fio para garantir conectividade eficiente.",
+            "Reparação de impressoras de diferentes modelos com problemas de hardware e software.",
+            "Troca da bateria interna de notebooks para prolongar o tempo de uso.",
+            "Recuperação de arquivos perdidos ou excluídos acidentalmente em dispositivos de armazenamento.",
+            "Formatação completa do disco rígido e reinstalação do sistema operacional.",
+            "Substituição do disco rígido defeituoso por um novo ou upgrade para maior capacidade.",
+            "Instalação e configuração de software antivírus para proteção contra malware.",
+            "Configuração de contas de e-mail e sincronização com dispositivos móveis.",
+            "Instalação de novos módulos de memória RAM para melhorar o desempenho do sistema.",
+            "Reparação de cabos de alimentação danificados ou com mau contato.",
+            "Instalação de sistemas de câmeras de segurança para monitoramento em tempo real.",
+            "Configuração de roteadores para fornecer acesso à internet e criar redes Wi-Fi.",
+            "Implementação de soluções de backup para proteção de dados importantes."
         );
 
         for (int i = 0; i < ordensDeServico.size(); i++) {
